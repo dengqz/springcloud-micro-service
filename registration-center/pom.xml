@@ -13,12 +13,6 @@
     <packaging>jar</packaging>
 
     <name>registration-center</name>
-
-    <!--<parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.10.RELEASE</version>
-    </parent>-->
     <dependencyManagement>
         <dependencies>
             <dependency>
