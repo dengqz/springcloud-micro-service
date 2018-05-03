@@ -1,5 +1,7 @@
 package com.microservice;
 
+import com.netflix.loadbalancer.IRule;
+import com.netflix.loadbalancer.RandomRule;
 import feign.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,7 +21,13 @@ import org.springframework.context.annotation.Bean;
 @EnableDiscoveryClient
 @SpringBootApplication
 public class HelloConsumerApp {
-
+    /**
+    访问策略
+     */
+    @Bean
+    public IRule ribbonRule() {
+        return new RandomRule();
+    }
     @Bean
     Logger.Level feginLoggerLevel(){
         return Logger.Level.FULL;

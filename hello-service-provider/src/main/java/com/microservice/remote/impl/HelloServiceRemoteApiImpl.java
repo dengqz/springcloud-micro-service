@@ -30,6 +30,7 @@ public class HelloServiceRemoteApiImpl implements HelloServiceRemoteApi {
     public User hello(@RequestHeader("name") String name, @RequestHeader("age") Integer age) {
         try {
             name= URLDecoder.decode(name,"UTF-8");
+            System.out.println(name);
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
