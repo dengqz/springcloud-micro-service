@@ -3,6 +3,8 @@ package com.microservice.controller;
 import com.microservice.remote.model.User;
 import com.microservice.service.HelloBackgroundService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,6 +23,9 @@ import java.util.Map;
  */
 @RestController
 public class HelloController {
+
+    @Autowired
+    private LoadBalancerClient loadBalancerClient;
 
     @Autowired
     private HelloBackgroundService helloBackgroundService;
@@ -42,5 +47,13 @@ public class HelloController {
         sb.append(s3).append("\n");
         ret.put("show",sb.toString());
         return ret;
+    }
+
+
+    @RequestMapping(value = "/ribbon")
+    public void ribbonTest(){
+        ServiceInstance serviceInstance = this.loadBalancerClient.choose("hello-service-provider");
+        System.out.println("===" + ":" + serviceInstance.getServiceId() + ":" + serviceInstance.getHost() + ":"
+                + serviceInstance.getPort());
     }
 }
