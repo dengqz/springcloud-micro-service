@@ -1,7 +1,7 @@
 package com.microservice.controller;
 
-import com.microservice.remote.model.User;
-import com.microservice.service.HelloBackgroundService;
+import com.microservice.model.User;
+import com.microservice.feignApi.HelloBackgroundService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;

@@ -1,7 +1,7 @@
-package com.microservice.remote.impl;
+package com.microservice.impl;
 
-import com.microservice.remote.api.HelloServiceRemoteApi;
-import com.microservice.remote.model.User;
+import com.microservice.api.HelloServiceRemoteApi;
+import com.microservice.model.User;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
