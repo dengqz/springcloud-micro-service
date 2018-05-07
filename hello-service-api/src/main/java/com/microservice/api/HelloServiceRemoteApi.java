@@ -1,6 +1,6 @@
-package com.microservice.remote.api;
+package com.microservice.api;
 
-import com.microservice.remote.model.User;
+import com.microservice.model.User;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -12,18 +12,17 @@ import org.springframework.web.bind.annotation.*;
  * @param   
  * @return   
  */
-@RequestMapping("/hello-service-remote")
+//@RequestMapping("/hello-service-remote")
 public interface HelloServiceRemoteApi {
 
-    @RequestMapping(value = "/hello1", method = RequestMethod.GET)
+    @RequestMapping(value = "/hello-service-remote/hello1", method = RequestMethod.GET)
     String hello(@RequestParam("name") String name);
 
-    @RequestMapping(value = "/hello2", method = RequestMethod.GET)
+    @RequestMapping(value = "/hello-service-remote/hello2", method = RequestMethod.GET)
     User hello(@RequestHeader("name") String name, @RequestHeader("age") Integer age);
 
 
-    @RequestMapping(value = "/hello3", method = RequestMethod.POST)
+    @RequestMapping(value = "/hello-service-remote/hello3", method = RequestMethod.POST)
     String hello(@RequestBody User user);
-
 
 }

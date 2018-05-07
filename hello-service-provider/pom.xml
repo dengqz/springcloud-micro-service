@@ -52,10 +52,16 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-maven-plugin</artifactId>
         </dependency>
-        <!--<dependency>
+        <!--断路器-->
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-hystrix</artifactId>
-        </dependency>-->
+        </dependency>
+        <!--Hystrix仪表盘-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
+        </dependency>
 
         <!--<dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -93,7 +99,7 @@
                 <configuration>
                     <!--fork :  如果没有该项配置，肯呢个devtools不会起作用，即应用不会restart -->
                     <fork>true</fork>
-                    <mainClass>com.microservice.remote.HelloProviderApplication</mainClass>
+                    <mainClass>com.microservice.HelloProviderApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>

@@ -1,6 +1,7 @@
-package com.microservice.service;
+package com.microservice.feignApi;
 
-import com.microservice.remote.api.HelloServiceRemoteApi;
+import com.microservice.fallback.Tsetfallback;
+import com.microservice.api.HelloServiceRemoteApi;
 import org.springframework.cloud.netflix.feign.FeignClient;
 
 /**
@@ -11,6 +12,6 @@ import org.springframework.cloud.netflix.feign.FeignClient;
  * @param   
  * @return   
  */
-@FeignClient(value = "hello-service-provider")
+@FeignClient(name = "hello-service-provider",fallback = Tsetfallback.class)
 public interface HelloBackgroundService extends HelloServiceRemoteApi{
 }

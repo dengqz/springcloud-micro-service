@@ -1,4 +1,4 @@
-package com.microservice.remote.model;
+package com.microservice.model;
 
 import java.io.Serializable;
 
