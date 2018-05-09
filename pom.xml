@@ -12,6 +12,8 @@
     <module>hello-service-api</module>
     <module>hello-service-provider</module>
     <module>hello-service-consumer</module>
+    <module>hystrix-dashboard</module>
+    <module>turbine</module>
   </modules>
   <packaging>pom</packaging>
 
