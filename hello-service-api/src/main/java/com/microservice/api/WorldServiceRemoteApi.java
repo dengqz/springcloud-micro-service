@@ -14,4 +14,6 @@ public interface WorldServiceRemoteApi {
     String world(@RequestParam("name") String name);
     @RequestMapping(value = "/hello-service-remote/world2", method = RequestMethod.GET)
     String world2(@RequestParam("name") String name) throws InterruptedException;
+    @RequestMapping(value = "/hello-service-remote/world3", method = RequestMethod.GET)
+    String world3(@RequestParam("name") String name) throws Exception;
 }

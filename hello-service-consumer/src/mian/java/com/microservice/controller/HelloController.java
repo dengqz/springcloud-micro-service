@@ -48,7 +48,25 @@ public class HelloController {
         ret.put("show",sb.toString());
         return ret;
     }
+    @RequestMapping(value = "/hello1")
+    public String hello1(){
+       return  helloBackgroundService.hello("张三");
+    }
 
+    @RequestMapping(value = "/hello2")
+    public String hello2(){
+        User user = null;
+        try {
+             user = helloBackgroundService.hello(URLEncoder.encode("李四", "UTF-8"), 30);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return user.toString();
+    }
+    @RequestMapping(value = "/hello3")
+    public String hello3(){
+        return helloBackgroundService.hello(new User("王五", 19));
+    }
 
     @RequestMapping(value = "/ribbon")
     public void ribbonTest(){
